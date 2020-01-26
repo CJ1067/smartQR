@@ -1,0 +1,89 @@
+:root {
+  /*colors*/
+  --bg-color: #d2b48c;
+  --fg-color: white;
+
+  /*fonts*/
+  --main-font-family: "Overpass", sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #f9f8f8;
+  height: 100%;
+}
+
+/* The sidebar menu */
+#sidebar {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 25%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  text-align: center;
+}
+
+/* Input box for the title */
+#titleInput {
+  text-align: left;
+  border-radius: 0px;
+}
+
+/* Search bar */
+#searchBar {
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 0px;
+  background-color: ;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Card body housing the interface */
+#interface {
+  margin-top: 1vh;
+  height: 98%;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Text box to type in card body */
+#inputArea {
+  background-color: white;
+  height: 83%;
+  border-radius: 0px;
+  resize: none;
+}
+
+/* Submit note button */
+#submitButton {
+  margin-top: 15px;
+  width: 100%;
+  border-radius: 0px;
+}
+
+/* Delete selected notes button */
+#deleteButton {
+  border-radius: 0px;
+}
+
+/* Style page content */
+.main {
+  margin-left: 25%; /* Same as the width of the sidebar */
+  height: 100%;
+  padding: 0px 10px;
+}
+
+/* Cards in the side panel */
+.card {
+  margin-top: 15px;
+  text-align: left;
+  border-radius: 0px;
+  background-color: white;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
