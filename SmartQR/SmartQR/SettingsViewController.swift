@@ -18,7 +18,20 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var facebookTxt: UITextField!
     @IBOutlet weak var instagramTxt: UITextField!
     
+    @IBOutlet weak var snapchatSwitch: UISwitch!
+    @IBOutlet weak var linkedinSwitch: UISwitch!
+    @IBOutlet weak var twitterSwitch: UISwitch!
+    @IBOutlet weak var facebookSwitch: UISwitch!
+    @IBOutlet weak var instagramSwitch: UISwitch!
+    
+    
     @IBAction func back(_ sender: Any) {
+        UserDefaults.standard.set(snapchatTxt.text, forKey: "user1")
+        UserDefaults.standard.set(linkedinTxt.text, forKey: "user2")
+        UserDefaults.standard.set(twitterTxt.text, forKey: "user3")
+        UserDefaults.standard.set(facebookTxt.text, forKey: "user4")
+        UserDefaults.standard.set(instagramTxt.text, forKey: "user5")
+        
         performSegue(withIdentifier: "segue", sender: self)
     }
     
@@ -43,6 +56,12 @@ class SettingsViewController: UIViewController {
         socialQRViewController.twitter = twitterTxt.text!
         socialQRViewController.facebook = facebookTxt.text!
         socialQRViewController.instagram = instagramTxt.text!
+        
+        socialQRViewController.snapchatSwitch = snapchatSwitch.isOn
+        socialQRViewController.linkedinSwitch = linkedinSwitch.isOn
+        socialQRViewController.twitterSwitch = twitterSwitch.isOn
+        socialQRViewController.facebookSwitch = facebookSwitch.isOn
+        socialQRViewController.instagramSwitch = instagramSwitch.isOn
     }
     
     override func viewDidAppear(_ animated: Bool) {

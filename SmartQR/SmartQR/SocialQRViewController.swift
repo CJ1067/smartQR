@@ -19,20 +19,31 @@ class SocialQRViewController: UIViewController {
     var facebook = String()
     var instagram = String()
     
+    var snapchatSwitch = true
+    var linkedinSwitch = true
+    var twitterSwitch = true
+    var facebookSwitch = true
+    var instagramSwitch = true
     
-    @IBAction func settings(_ sender: Any) {
-        
-    }
     
     @IBAction func generateQR2(_ sender: Any) {
         
         var text = "https://static-app-onload.herokuapp.com/index.html?"
         
-        text.append("snap-name=\(snapchat)&")
-        text.append("linked-in-name=\(linkedin)&")
-        text.append("twitter-name=\(twitter)&")
-        text.append("facebook-name=\(facebook)&")
-        text.append("insta-name=\(instagram)&")
+        if (snapchatSwitch) {
+            text.append("snap-name=\(snapchat)&")
+        }
+        if (linkedinSwitch) { text.append("linked-in-name=\(linkedin)&")
+        }
+        if (twitterSwitch) {
+            text.append("twitter-name=\(twitter)&")
+        }
+        if (facebookSwitch) {
+            text.append("facebook-name=\(facebook)&")
+        }
+        if (instagramSwitch) {
+            text.append("insta-name=\(instagram)&")
+        }
         
         let data = text.data(using: .ascii, allowLossyConversion: false)
         let filter = CIFilter(name: "CIQRCodeGenerator")
