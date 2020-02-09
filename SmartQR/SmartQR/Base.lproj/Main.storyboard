@@ -19,7 +19,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="z94-CR-mtQ"/>
-                        <segue destination="bza-CF-Vx5" kind="relationship" relationship="viewControllers" id="agB-Ng-egy"/>
+                        <segue destination="Y9S-iD-x3M" kind="relationship" relationship="viewControllers" id="EEw-kd-maN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZc-jE-03b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -101,7 +101,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Contacts" image="person.badge.plus.fill" catalog="system" id="60K-OV-cwj"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="person.badge.plus" catalog="system" id="60K-OV-cwj"/>
                     <connections>
                         <outlet property="displayCodeView" destination="0Te-LS-czs" id="V8X-gM-cX9"/>
                         <outlet property="emailTxt" destination="RtX-IW-NJd" id="AGv-GA-DZ1"/>
@@ -115,12 +115,69 @@
             </objects>
             <point key="canvasLocation" x="-642.39999999999998" y="-663.41829085457277"/>
         </scene>
+        <!--Social Media-->
+        <scene sceneID="zd1-hq-zRq">
+            <objects>
+                <viewController id="Y9S-iD-x3M" customClass="SocialQRViewController" customModule="SmartQR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CVM-Bp-KHY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AMICI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shu-ot-wqV">
+                                <rect key="frame" x="118" y="47" width="139" height="42.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dYs-3p-hB5">
+                                <rect key="frame" x="39" y="302" width="297" height="214"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTr-el-pEK">
+                                <rect key="frame" x="106" y="132" width="162" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title=" GENERATE QR " image="qrcode" catalog="system">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="generateQR2:" destination="Y9S-iD-x3M" eventType="touchUpInside" id="cJO-fs-Qwq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FI-Gd-k7N">
+                                <rect key="frame" x="289" y="38" width="70" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="54"/>
+                                <state key="normal" image="gear" catalog="system"/>
+                                <connections>
+                                    <action selector="settings:" destination="Y9S-iD-x3M" eventType="touchUpInside" id="FgE-DM-YW7"/>
+                                    <segue destination="bza-CF-Vx5" kind="popoverPresentation" popoverAnchorView="1FI-Gd-k7N" id="naB-DQ-P4g">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="pyG-35-MuC"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Social Media" image="camera" catalog="system" id="2hq-J6-x39"/>
+                    <navigationItem key="navigationItem" id="VSd-J2-89g"/>
+                    <connections>
+                        <outlet property="displayCodeView2" destination="dYs-3p-hB5" id="8D4-ll-bMp"/>
+                        <outlet property="generateQR2" destination="GTr-el-pEK" id="ziM-mE-82j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4JN-qc-E7K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1223.2" y="526.6866566716642"/>
+        </scene>
         <!--View Controller 2-->
         <scene sceneID="Yw2-dK-ma6">
             <objects>
-                <viewController title="View Controller 2" id="bza-CF-Vx5" customClass="ViewController2" customModule="SmartQR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="View Controller 2" id="bza-CF-Vx5" customClass="SettingsViewController" customModule="SmartQR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y1X-k5-kHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Snapchat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dsJ-fz-U2s">
@@ -138,16 +195,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWO-Z0-L4X">
-                                <rect key="frame" x="106" y="321" width="162" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                <state key="normal" title=" GENERATE QR " image="qrcode" catalog="system">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="generateQR2:" destination="bza-CF-Vx5" eventType="touchUpInside" id="jga-ti-JVg"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMICI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAe-1v-D0J">
                                 <rect key="frame" x="118" y="30" width="139" height="42.5"/>
                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="37"/>
@@ -159,14 +206,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZGz-v7-23W">
-                                <rect key="frame" x="39" y="368" width="297" height="214"/>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Instagram" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WHQ-Lg-93K">
                                 <rect key="frame" x="29" y="270" width="203" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyH-zh-HcZ">
+                                <rect key="frame" x="29" y="40" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="x.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="back:" destination="bza-CF-Vx5" eventType="touchUpInside" id="az4-Op-eBa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.53055910207971435" blue="0.45554898677562572" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -184,39 +236,37 @@
                             <constraint firstItem="dsJ-fz-U2s" firstAttribute="top" secondItem="eAe-1v-D0J" secondAttribute="bottom" constant="21.5" id="UQk-wW-GCT"/>
                             <constraint firstItem="ft0-dx-KeK" firstAttribute="trailing" secondItem="WHQ-Lg-93K" secondAttribute="trailing" constant="143" id="XQ7-j1-mui"/>
                             <constraint firstItem="9uQ-i2-YWM" firstAttribute="leading" secondItem="ft0-dx-KeK" secondAttribute="leading" constant="29" id="b32-ar-Hr8"/>
-                            <constraint firstItem="KWO-Z0-L4X" firstAttribute="leading" secondItem="ft0-dx-KeK" secondAttribute="leading" constant="106" id="d4i-iF-7pA"/>
-                            <constraint firstItem="ZGz-v7-23W" firstAttribute="leading" secondItem="ft0-dx-KeK" secondAttribute="leading" constant="39" id="g6y-ob-4hH"/>
-                            <constraint firstItem="ft0-dx-KeK" firstAttribute="trailing" secondItem="KWO-Z0-L4X" secondAttribute="trailing" constant="107" id="hvd-eZ-Lq0"/>
-                            <constraint firstItem="KWO-Z0-L4X" firstAttribute="top" secondItem="WHQ-Lg-93K" secondAttribute="bottom" priority="750" constant="17" id="kah-si-dhp"/>
                             <constraint firstItem="W4N-lU-pT9" firstAttribute="leading" secondItem="ft0-dx-KeK" secondAttribute="leading" constant="29" id="qyJ-1V-f2r"/>
-                            <constraint firstItem="ft0-dx-KeK" firstAttribute="trailing" secondItem="ZGz-v7-23W" secondAttribute="trailing" constant="39" id="swn-hi-qH7"/>
                             <constraint firstItem="eAe-1v-D0J" firstAttribute="top" secondItem="ft0-dx-KeK" secondAttribute="top" constant="30" id="t3C-h7-WwD"/>
-                            <constraint firstItem="ZGz-v7-23W" firstAttribute="top" secondItem="KWO-Z0-L4X" secondAttribute="bottom" priority="750" constant="23" id="tAx-PX-uT1"/>
                             <constraint firstItem="9uQ-i2-YWM" firstAttribute="top" secondItem="JnR-cn-bVc" secondAttribute="bottom" constant="10" id="vUI-lg-UDh"/>
                             <constraint firstItem="WHQ-Lg-93K" firstAttribute="top" secondItem="W4N-lU-pT9" secondAttribute="bottom" constant="8" id="wST-M1-6Ht"/>
-                            <constraint firstItem="ft0-dx-KeK" firstAttribute="bottom" secondItem="ZGz-v7-23W" secondAttribute="bottom" constant="36" id="wqk-kC-ql1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ft0-dx-KeK"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title=" Social Media" image="camera.fill" catalog="system" id="mIH-sb-Wvc"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="mIH-sb-Wvc"/>
+                    <navigationItem key="navigationItem" id="NFo-8h-EtX"/>
                     <connections>
-                        <outlet property="displayCodeView2" destination="ZGz-v7-23W" id="3Va-Gm-yU8"/>
-                        <outlet property="generateQR2" destination="KWO-Z0-L4X" id="vCp-L8-H9E"/>
-                        <outlet property="user1Txt" destination="dsJ-fz-U2s" id="yQY-qt-sEH"/>
-                        <outlet property="user2Txt" destination="JnR-cn-bVc" id="Qtt-2Z-EAx"/>
-                        <outlet property="user3Txt" destination="9uQ-i2-YWM" id="hTk-G3-TlX"/>
-                        <outlet property="user4Txt" destination="W4N-lU-pT9" id="rFU-Dg-ufZ"/>
-                        <outlet property="user5Txt" destination="WHQ-Lg-93K" id="VJc-L2-YiD"/>
+                        <outlet property="facebookTxt" destination="W4N-lU-pT9" id="rFU-Dg-ufZ"/>
+                        <outlet property="instagramTxt" destination="WHQ-Lg-93K" id="VJc-L2-YiD"/>
+                        <outlet property="linkedinTxt" destination="JnR-cn-bVc" id="Qtt-2Z-EAx"/>
+                        <outlet property="snapchatTxt" destination="dsJ-fz-U2s" id="yQY-qt-sEH"/>
+                        <outlet property="twitterTxt" destination="9uQ-i2-YWM" id="hTk-G3-TlX"/>
+                        <segue destination="Y9S-iD-x3M" kind="presentation" identifier="segue" id="pSD-iY-gRv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJt-HO-gJJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-642.39999999999998" y="83.208395802098963"/>
+            <point key="canvasLocation" x="-148" y="49"/>
         </scene>
     </scenes>
     <resources>
-        <image name="camera.fill" catalog="system" width="64" height="48"/>
-        <image name="person.badge.plus.fill" catalog="system" width="64" height="58"/>
+        <image name="camera" catalog="system" width="64" height="48"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="person.badge.plus" catalog="system" width="64" height="58"/>
         <image name="qrcode" catalog="system" width="64" height="56"/>
+        <image name="x.circle" catalog="system" width="64" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="pSD-iY-gRv"/>
+    </inferredMetricsTieBreakers>
 </document>

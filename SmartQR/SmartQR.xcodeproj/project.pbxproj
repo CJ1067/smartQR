@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D3C7C9B23DD5EEF00F0C1EC /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C7C9A23DD5EEF00F0C1EC /* ViewController2.swift */; };
+		4D3C7C9B23DD5EEF00F0C1EC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C7C9A23DD5EEF00F0C1EC /* SettingsViewController.swift */; };
+		4DC80CCC23EFB349005016DD /* SocialQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC80CCB23EFB349005016DD /* SocialQRViewController.swift */; };
 		ABA9FC2623DCEE7800A153DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA9FC2523DCEE7800A153DE /* AppDelegate.swift */; };
 		ABA9FC2823DCEE7800A153DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA9FC2723DCEE7800A153DE /* ViewController.swift */; };
 		ABA9FC2B23DCEE7900A153DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA9FC2923DCEE7900A153DE /* Main.storyboard */; };
@@ -17,7 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4D3C7C9A23DD5EEF00F0C1EC /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		4D3C7C9A23DD5EEF00F0C1EC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4DC80CCB23EFB349005016DD /* SocialQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialQRViewController.swift; sourceTree = "<group>"; };
 		ABA9FC2223DCEE7800A153DE /* SmartQR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartQR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA9FC2523DCEE7800A153DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABA9FC2723DCEE7800A153DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +63,8 @@
 				ABA9FC2523DCEE7800A153DE /* AppDelegate.swift */,
 				ABA9FC2723DCEE7800A153DE /* ViewController.swift */,
 				ABA9FC2923DCEE7900A153DE /* Main.storyboard */,
-				4D3C7C9A23DD5EEF00F0C1EC /* ViewController2.swift */,
+				4DC80CCB23EFB349005016DD /* SocialQRViewController.swift */,
+				4D3C7C9A23DD5EEF00F0C1EC /* SettingsViewController.swift */,
 				ABA9FC3723DCF82200A153DE /* QRViewController.swift */,
 				ABA9FC2C23DCEE7A00A153DE /* Assets.xcassets */,
 				ABA9FC2E23DCEE7A00A153DE /* LaunchScreen.storyboard */,
@@ -142,8 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABA9FC2823DCEE7800A153DE /* ViewController.swift in Sources */,
-				4D3C7C9B23DD5EEF00F0C1EC /* ViewController2.swift in Sources */,
+				4D3C7C9B23DD5EEF00F0C1EC /* SettingsViewController.swift in Sources */,
 				ABA9FC2623DCEE7800A153DE /* AppDelegate.swift in Sources */,
+				4DC80CCC23EFB349005016DD /* SocialQRViewController.swift in Sources */,
 				ABA9FC3823DCF82200A153DE /* QRViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
