@@ -32,6 +32,12 @@ class SettingsViewController: UIViewController {
         UserDefaults.standard.set(facebookTxt.text, forKey: "user4")
         UserDefaults.standard.set(instagramTxt.text, forKey: "user5")
         
+        UserDefaults.standard.set(snapchatSwitch.isOn, forKey: "snapchatSwitch")
+        UserDefaults.standard.set(linkedinSwitch.isOn, forKey: "linkedinSwitch")
+        UserDefaults.standard.set(twitterSwitch.isOn, forKey: "twitterSwitch")
+        UserDefaults.standard.set(facebookSwitch.isOn, forKey: "facebookSwitch")
+        UserDefaults.standard.set(instagramSwitch.isOn, forKey: "instagramSwitch")
+        
         performSegue(withIdentifier: "segue", sender: self)
     }
     
@@ -82,6 +88,26 @@ class SettingsViewController: UIViewController {
         }
         if let instagram = UserDefaults.standard.object(forKey: "user5") as? String {
             instagramTxt.text = instagram
+        }
+        
+        if let snapchatSwitchValue = UserDefaults.standard.object(forKey: "snapchatSwitch") as? Bool {
+            snapchatSwitch.isOn = snapchatSwitchValue
+        }
+        
+        if let linkedinSwitchValue = UserDefaults.standard.object(forKey: "linkedinSwitch") as? Bool {
+            linkedinSwitch.isOn = linkedinSwitchValue
+        }
+        
+        if let twitterSwitchValue = UserDefaults.standard.object(forKey: "twitterSwitch") as? Bool {
+            twitterSwitch.isOn = twitterSwitchValue
+        }
+        
+        if let facebookSwitchValue = UserDefaults.standard.object(forKey: "facebookSwitch") as? Bool {
+            facebookSwitch.isOn = facebookSwitchValue
+        }
+        
+        if let instagramSwitchValue = UserDefaults.standard.object(forKey: "instagramSwitch") as? Bool {
+            instagramSwitch.isOn = instagramSwitchValue
         }
         
     }
