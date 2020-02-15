@@ -129,7 +129,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTr-el-pEK">
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTr-el-pEK">
                                 <rect key="frame" x="106" y="132" width="162" height="65"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <state key="normal" title=" GENERATE QR " image="qrcode" catalog="system">
@@ -145,7 +145,7 @@
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="54"/>
                                 <state key="normal" image="gear" catalog="system"/>
                                 <connections>
-                                    <segue destination="bza-CF-Vx5" kind="presentation" modalPresentationStyle="fullScreen" id="naB-DQ-P4g"/>
+                                    <segue destination="bza-CF-Vx5" kind="show" identifier="sendDataSegue" id="naB-DQ-P4g"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dYs-3p-hB5">
@@ -180,12 +180,12 @@
             </objects>
             <point key="canvasLocation" x="-1223.2" y="526.6866566716642"/>
         </scene>
-        <!--View Controller 2-->
+        <!--Settings-->
         <scene sceneID="Yw2-dK-ma6">
             <objects>
-                <viewController title="View Controller 2" id="bza-CF-Vx5" customClass="SettingsViewController" customModule="SmartQR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bza-CF-Vx5" customClass="SettingsViewController" customModule="SmartQR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y1X-k5-kHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Snapchat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dsJ-fz-U2s">
@@ -289,16 +289,16 @@
                     <navigationItem key="navigationItem" id="NFo-8h-EtX"/>
                     <connections>
                         <outlet property="facebookSwitch" destination="9Xr-iO-3bO" id="aBd-cS-ahQ"/>
-                        <outlet property="facebookTxt" destination="W4N-lU-pT9" id="rFU-Dg-ufZ"/>
+                        <outlet property="facebookTxt" destination="W4N-lU-pT9" id="Ihm-qp-qdZ"/>
                         <outlet property="instagramSwitch" destination="2wH-Wh-1Y6" id="EzE-aZ-vN1"/>
                         <outlet property="instagramTxt" destination="WHQ-Lg-93K" id="VJc-L2-YiD"/>
                         <outlet property="linkedinSwitch" destination="kzg-vf-ZQg" id="rfu-KI-rOl"/>
                         <outlet property="linkedinTxt" destination="JnR-cn-bVc" id="Qtt-2Z-EAx"/>
                         <outlet property="snapchatSwitch" destination="QSj-3d-v5B" id="uSl-fd-MGv"/>
-                        <outlet property="snapchatTxt" destination="dsJ-fz-U2s" id="yQY-qt-sEH"/>
+                        <outlet property="snapchatTxt" destination="dsJ-fz-U2s" id="f0A-82-VZj"/>
                         <outlet property="twitterSwitch" destination="5SW-V9-iNZ" id="xZJ-1d-jtL"/>
                         <outlet property="twitterTxt" destination="9uQ-i2-YWM" id="hTk-G3-TlX"/>
-                        <segue destination="Y9S-iD-x3M" kind="presentation" identifier="segue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="pSD-iY-gRv"/>
+                        <segue destination="Y9S-iD-x3M" kind="presentation" identifier="segue" modalPresentationStyle="fullScreen" id="pSD-iY-gRv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJt-HO-gJJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -314,6 +314,7 @@
         <image name="x.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="naB-DQ-P4g"/>
         <segue reference="pSD-iY-gRv"/>
     </inferredMetricsTieBreakers>
 </document>

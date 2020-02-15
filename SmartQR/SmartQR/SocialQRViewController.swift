@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SocialQRViewController: UIViewController {
+class SocialQRViewController: UIViewController, sendDataDelegate {
 
     @IBOutlet weak var generateQR2: UIButton!
     @IBOutlet weak var displayCodeView2: UIImageView!
@@ -25,7 +25,19 @@ class SocialQRViewController: UIViewController {
     var facebookSwitch = true
     var instagramSwitch = true
     
-    
+    func sendData(snapchatField: String, linkedinField: String, twitterField: String, facebookField: String, instagramField: String, snapchatSwitchField: Bool, linkedinSwitchField: Bool, twitterSwitchField: Bool, facebookSwitchField: Bool, instagramSwitchField: Bool) {
+        snapchat = snapchatField
+        linkedin = linkedinField
+        twitter = twitterField
+        facebook = facebookField
+        instagram = instagramField
+        
+        snapchatSwitch = snapchatSwitchField
+        linkedinSwitch = linkedinSwitchField
+        twitterSwitch = twitterSwitchField
+        facebookSwitch = facebookSwitchField
+        instagramSwitch = instagramSwitchField
+    }
     @IBAction func generateQR2(_ sender: Any) {
         
         var text = "https://static-app-onload.herokuapp.com/index.html?"
@@ -33,7 +45,8 @@ class SocialQRViewController: UIViewController {
         if (snapchatSwitch) {
             text.append("snap-name=\(snapchat)&")
         }
-        if (linkedinSwitch) { text.append("linked-in-name=\(linkedin)&")
+        if (linkedinSwitch) {
+            text.append("linked-in-name=\(linkedin)&")
         }
         if (twitterSwitch) {
             text.append("twitter-name=\(twitter)&")
@@ -63,15 +76,11 @@ class SocialQRViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "sendDataSegue" {
+            let vc : SettingsViewController = segue.destination as! SettingsViewController
+            vc.delegate = self
+        }
     }
-    */
 
 }

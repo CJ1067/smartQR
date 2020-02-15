@@ -10,6 +10,10 @@ import UIKit
 import Contacts
 import SwiftUI
 
+protocol sendDataDelegate {
+    func sendData(snapchatField: String, linkedinField: String, twitterField: String, facebookField: String, instagramField: String, snapchatSwitchField: Bool, linkedinSwitchField: Bool, twitterSwitchField: Bool, facebookSwitchField: Bool, instagramSwitchField: Bool)
+}
+
 class SettingsViewController: UIViewController {
     
     @IBOutlet weak var snapchatTxt: UITextField!
@@ -24,8 +28,10 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var facebookSwitch: UISwitch!
     @IBOutlet weak var instagramSwitch: UISwitch!
     
+    var delegate : sendDataDelegate?
     
-    @IBAction func back(_ sender: Any) {
+    override func viewWillDisappear(_ animated: Bool) {
+        
         UserDefaults.standard.set(snapchatTxt.text, forKey: "user1")
         UserDefaults.standard.set(linkedinTxt.text, forKey: "user2")
         UserDefaults.standard.set(twitterTxt.text, forKey: "user3")
@@ -38,7 +44,14 @@ class SettingsViewController: UIViewController {
         UserDefaults.standard.set(facebookSwitch.isOn, forKey: "facebookSwitch")
         UserDefaults.standard.set(instagramSwitch.isOn, forKey: "instagramSwitch")
         
-        performSegue(withIdentifier: "segue", sender: self)
+        
+        if delegate != nil {
+            delegate?.sendData(snapchatField: snapchatTxt.text!, linkedinField: linkedinTxt.text!, twitterField: twitterTxt.text!, facebookField: facebookTxt.text!, instagramField: instagramTxt.text!, snapchatSwitchField: snapchatSwitch.isOn, linkedinSwitchField: linkedinSwitch.isOn, twitterSwitchField: twitterSwitch.isOn, facebookSwitchField: facebookSwitch.isOn, instagramSwitchField: instagramSwitch.isOn)
+        }
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -53,22 +66,6 @@ class SettingsViewController: UIViewController {
         view.endEditing(true)
     }
 
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let socialQRViewController = segue.destination as! SocialQRViewController
-        socialQRViewController.snapchat = snapchatTxt.text!
-        socialQRViewController.linkedin = linkedinTxt.text!
-        socialQRViewController.twitter = twitterTxt.text!
-        socialQRViewController.facebook = facebookTxt.text!
-        socialQRViewController.instagram = instagramTxt.text!
-        
-        socialQRViewController.snapchatSwitch = snapchatSwitch.isOn
-        socialQRViewController.linkedinSwitch = linkedinSwitch.isOn
-        socialQRViewController.twitterSwitch = twitterSwitch.isOn
-        socialQRViewController.facebookSwitch = facebookSwitch.isOn
-        socialQRViewController.instagramSwitch = instagramSwitch.isOn
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         if let snapchat = UserDefaults.standard.object(forKey: "user1") as? String {
